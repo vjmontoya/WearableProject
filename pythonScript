@@ -6,14 +6,14 @@ import serial  # sudo pip install pyserial should work
 
 serial_port = '/dev/cu.usbmodem1432301' #port is assigned by the computer
 baud_rate = 9600 #In arduino, Serial.begin(baud_rate) #critical that this parameter matches what's in the arduino code
-timeout = 1 	 #allows us to not get an infinite loops
 write_to_file_path = "sensorData.txt"
 
 
 output_file = open(write_to_file_path, "w+")
 ser = serial.Serial(serial_port, baud_rate)
+
 while True:
     line = ser.readline()
     line = line.decode("utf-8") #ser.readline returns a binary, convert to string
     print(line)
-    output_file.write(line)
+    output_file.write("Distance (cm): " + line)
