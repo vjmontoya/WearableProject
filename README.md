@@ -1,4 +1,4 @@
-# WearableProject
+CSU Wearables Team: The Depth Perception Buddy
 
 NASA funded project
 
